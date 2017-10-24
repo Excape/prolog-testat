@@ -37,9 +37,7 @@ append([],L,L).
 append([H|T],L2,[H|L3]) :- append(T,L2,L3).
 
 getFirst([], AccRest, AccRest, Acc, Acc).
-getFirst([[H1|T1]|T2], AccRest, Rest, Acc, R) :- 	append(Acc, [H1], L3),
-    												append(AccRest, [T1], L4),
-    												getFirst(T2, L4, Rest, L3, R).
+getFirst([[H1|T1]|T2], AccRest, Rest, Acc, R) :- append(Acc, [H1], L3), append(AccRest, [T1], L4), getFirst(T2, L4, Rest, L3, R).
 
 toCol([[]|_], Acc, Acc).
 toCol(L, Acc, R) :- getFirst(L, [], Rest, [], Col), append(Acc, [Col], L3), toCol(Rest,  L3, R).
