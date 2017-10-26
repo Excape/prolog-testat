@@ -140,9 +140,23 @@ time(sudoku(A1, 7, 4, 6, 9, 2, 5, 8, 1,
              7, 9, 6, 1, 8, 5, 4, 2, I9)).
 % 15,133,049,151 inferences, 912.366 CPU in 913.484 seconds (100% CPU, 16586593 Lips)
 ```
+- 10 free variables
+    - Now, not all free variables can be "independent"
+```prolog
+time(sudoku(A1, 7, 4, 6, 9, 2, 5, 8, 1,
+             5, 6, 2, 8, 4, 1, 9, B8, 7,
+             8, 1, 9, C4, 5, 7, 6, 4, 2,
+             9, 2, D3, 5, 1, 6, 3, 7, 4,
+             E1, 3, 1, 9, E5, 8, 2, 6, 5,
+             6, 5, 7, 4, 2, 3, F7, 1, 9,
+             1, 8, 5, 2, 3, G6, 7, 9, 6,
+             2, H2, 3, 7, 6, 9, 1, 5, 8,
+             7, 9, 6, 1, 8, 5, 4, 2, I9)).
+% 135,793,811,262 inferences, 8318.733 CPU in 8328.944 seconds (100% CPU, 16323858 Lips)
+```
 
 ### Alternative Measurement
-When we measure a Sudoku where the free variables are diagonal, the result gets even worse. This just shows that the approach with "independent" variables could be considered a "best-case", and it is hard to extrapolate further.
+When we measure a Sudoku where the free variables are diagonal, the result gets worse. This just shows that the approach with "independent" variables (max. 9 free variables) could be considered a "best-case", and it is hard to extrapolate further.
 
 ```prolog
 time(sudoku(A1, 7, 4, 6, 9, 2, 5, 8, 1,
@@ -168,7 +182,18 @@ time(sudoku(A1, 7, 4, 6, 9, 2, 5, 8, 1,
 | 7   | 13.82  |
 | 8   | 102    |
 | 9   | 913.48 |
+| 10  | 8328.9 |
 
-As we can see in the [Measurement Analysis](measurement_analysis.ipynb), the time explodes exponentially. With a exponential curve fit, we see that 10 free variables would approximately take 42 hours, although it is hard to extrapolate from this small dataset.
+As we can see in the [Measurement Analysis](measurement_analysis.ipynb), the time explodes exponentially. With a exponential curve fit, we see that 12 free variables would approximately take over a week, although it is hard to extrapolate from this small dataset.
+
+
+| x  | approximate runtime |
+|----|---------------------|
+| 11 | 20.8 hours          |
+| 12 | 7.8 days            |
+| 13 | 2.35 months         |
+| 14 | 21.2 months         |
+| 15 | 16.1 years          |
+
 
 ![plot](plot.png)
