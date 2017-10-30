@@ -36,6 +36,7 @@ sudoku(
       I1, I2, I3, I4, I5, I6, I7, I8, I9
     ]),
 
+
     alldiflist([
       % rows
       [A1, A2, A3, A4, A5, A6, A7, A8, A9],
