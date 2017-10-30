@@ -1,9 +1,9 @@
 # Prolog Sudoku Solver
-# Example 4x4
+## Example 4x4
 ```
 sudoku(A1,3,2,A4, 4,B2,B3,3, C1,1,4,C4, D1,4,D3,1).
 ```
-# Example 9x9
+## Example 9x9
 ```
 sudoku(A1, A2, A3, A4, 6, A6, 2, A8, A9,
       B1, 3, B3, 5, B5, B6, B7, B8, B9,
