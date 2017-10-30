@@ -1,8 +1,10 @@
 # Prolog Sudoku Solver
 # Example 4x4
+```
 sudoku(A1,3,2,A4, 4,B2,B3,3, C1,1,4,C4, D1,4,D3,1).
-
+```
 # Example 9x9
+```
 sudoku(A1, A2, A3, A4, 6, A6, 2, A8, A9,
       B1, 3, B3, 5, B5, B6, B7, B8, B9,
       C1, C2, C3, C4, C5, C6, 8, C8, 3,
@@ -12,6 +14,7 @@ sudoku(A1, A2, A3, A4, 6, A6, 2, A8, A9,
       6, G2, 2, G4, G5, G6, G7, G8, G9,
       H1, H2, H3, H4, H5, 5, H7, 1, H9,
       I1, I2, 7, I4, 9, I6, I7, I8, I9).
+```
 
 ## Runtime
 See [measurements](measurements/README.md)
